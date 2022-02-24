@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Button, FlatList, Image, RefreshControl, SafeAreaView, StatusBar, Text, ToastAndroid, View} from "react-native";
+import {Button, FlatList, RefreshControl, SafeAreaView, StatusBar, ToastAndroid, View} from "react-native";
 import {useAuth} from "react-native-sphoton-app-image";
 import {useNavigation} from "@react-navigation/native";
 import {RootStackParamList} from "../../../App";
@@ -60,7 +60,21 @@ const TestScreen: React.FC = ({}) => {
           navigation.navigate('TestScreen2')
         }
       }
-      title={"To screen 2"}/>
+      title={"To screen list Image"}/>
+    <Button
+      onPress={
+        () => {
+          navigation.navigate('CollapsingToolBarScreen')
+        }
+      }
+      title={"To CollapsingToolBar Screen"}/>
+    <Button
+      onPress={
+        () => {
+          navigation.navigate('WebViewTestScreen')
+        }
+      }
+      title={"To WebViewTestScreen Screen"}/>
     <Button
       onPress={deleteData}
       title={"Delete data"}/>
