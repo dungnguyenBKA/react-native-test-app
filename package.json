@@ -18,8 +18,12 @@
     "node-html-parser": "^5.2.0",
     "react": "17.0.2",
     "react-native": "0.67.2",
+    "react-native-camera": "^4.2.1",
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^2.2.0",
+    "react-native-hole-view": "^2.1.0",
+    "react-native-permissions": "^3.3.1",
+    "react-native-qrcode-scanner": "^1.5.5",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.11.1",
     "react-native-sphoton-app-image": "^0.1.6"

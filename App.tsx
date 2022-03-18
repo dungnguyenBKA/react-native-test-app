@@ -4,15 +4,16 @@ import {createStackNavigator} from '@react-navigation/stack';
 import TestScreen from "./src/screen/TestScreen/TestScreen";
 import TestScreen2 from "./src/screen/TestScreen2/TestScreen2";
 import {NavigationContainer} from "@react-navigation/native";
-import CollapsingToolBarScreen from "./src/screen/CollapsingToolBarScreen/CollapsingToolBarScreen";
 import WebViewTestScreen from "./src/screen/WebViewTestScreen/WebViewTestScreen";
-
+import {NavigationContainerRef} from "@react-navigation/core";
+import QRCodeScreen from "./src/screen/QRCodeScreen/QRCodeScreen";
 
 export type RootStackParamList = {
-  TestScreen1: undefined;
+  ListScreen: undefined;
   TestScreen2: undefined;
   CollapsingToolBarScreen: undefined;
   WebViewTestScreen: undefined;
+  QRCodeTestScreen: undefined;
 };
 
 export const RootStack = createStackNavigator<RootStackParamList>();
@@ -25,19 +26,25 @@ const App = () => {
     </UserAuthenticate>
   );
 };
-
+export const NavigationRef = React.createRef<NavigationContainerRef<RootStackParamList>>()
 const AppNavigator = () => {
-  return <NavigationContainer>
-    <RootStack.Navigator initialRouteName="TestScreen1">
-      <RootStack.Screen name="TestScreen1" component={TestScreen}/>
-      <RootStack.Screen name="TestScreen2" component={TestScreen2}/>
-      <RootStack.Screen name="WebViewTestScreen" component={WebViewTestScreen}/>
+  return <NavigationContainer ref={NavigationRef}>
+    <RootStack.Navigator initialRouteName="QRCodeTestScreen">
+      <RootStack.Screen
+        name="ListScreen"
+        component={TestScreen}/>
+      <RootStack.Screen
+        name="TestScreen2"
+        component={TestScreen2}/>
+      <RootStack.Screen
+        name="WebViewTestScreen"
+        component={WebViewTestScreen}/>
       <RootStack.Screen
         options={{
           headerShown: false
         }}
-        name="CollapsingToolBarScreen"
-        component={CollapsingToolBarScreen}/>
+        name="QRCodeTestScreen"
+        component={QRCodeScreen}/>
     </RootStack.Navigator>
   </NavigationContainer>
 }
